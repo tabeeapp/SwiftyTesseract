@@ -15,6 +15,7 @@ typealias TessString = UnsafePointer<Int8>
 typealias Pix = UnsafeMutablePointer<PIX>?
 
 /// A class to perform optical character recognition with the open-source Tesseract library
+@objcMembers
 public class SwiftyTesseract {
   
   // MARK: - Properties
