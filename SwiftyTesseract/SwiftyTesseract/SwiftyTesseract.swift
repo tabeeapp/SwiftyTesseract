@@ -16,7 +16,7 @@ typealias Pix = UnsafeMutablePointer<PIX>?
 
 /// A class to perform optical character recognition with the open-source Tesseract library
 @objcMembers
-public class SwiftyTesseract {
+public class SwiftyTesseract: NSObject {
   
   // MARK: - Properties
   private let tesseract: TessBaseAPI = TessBaseAPICreate()
@@ -72,7 +72,7 @@ public class SwiftyTesseract {
   private init(languageString: String,
                bundle: Bundle = .main,
                engineMode: EngineMode = .lstmOnly) {
-    
+    super.init()
     setEnvironmentVariable(.tessDataPrefix, value: bundle.pathToTrainedData)
     
     guard TessBaseAPIInit2(tesseract,
