@@ -92,10 +92,9 @@ public class SwiftyTesseract: NSObject {
   ///   - languages: Languages of the text to be recognized
   ///   - bundle: The bundle that contains the tessdata folder - default is .main
   ///   - engineMode: The tesseract engine mode - default is .lstmOnly
-  public convenience init(languages: [RecognitionLanguage],
-              bundle: Bundle = .main,
-              engineMode: EngineMode = .lstmOnly) {
-    
+  public convenience init(languages: [RecognitionLanguage]) {
+    let bundle: Bundle = .main
+	let engineMode: EngineMode = .lstmOnly
     let stringLanguages = RecognitionLanguage.createLanguageString(from: languages)
     self.init(languageString: stringLanguages, bundle: bundle, engineMode: engineMode)
     
@@ -108,11 +107,9 @@ public class SwiftyTesseract: NSObject {
   ///   - language: The language of the text to be recognized
   ///   - bundle: The bundle that contains the tessdata folder - default is .main
   ///   - engineMode: The tesseract engine mode - default is .lstmOnly
-  public convenience init(language: RecognitionLanguage,
-                          bundle: Bundle = .main,
-                          engineMode: EngineMode = .lstmOnly) {
+  public convenience init(language: RecognitionLanguage) {
     
-    self.init(languages: [language], bundle: bundle, engineMode: engineMode)
+    self.init(languages: [language])
   }
   
   /// Creates an instance of SwiftyTesseract using CustomLanguages. The tessdata

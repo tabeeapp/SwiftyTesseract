@@ -9,6 +9,7 @@
 import libtesseract
 
 /// Specifically determines the underlying method that Tesseract uses to perforn OCR
+@objc
 public enum EngineMode: TessOcrEngineMode.RawValue {
   /// The legacy Tesseract engine. This can only use training data from the
   /// [tessdata](https://github.com/tesseract-ocr/tessdata) repository
